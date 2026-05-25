@@ -8,6 +8,4 @@ The system architecture consists of a Flutter-based cross-platform mobile applic
 
 Developed within the scope of the TÜBİTAK 2209-A University Students Research Projects Support Program, AI Body Scanner aims to contribute to the intersection of artificial intelligence, mobile health technologies, and digital wellness systems by providing a modern, intelligent, and research-oriented body analysis platform.
 
-## 👨‍💻 Developers
-- Nazmi Uyar
-- Sıla Şirin
+
