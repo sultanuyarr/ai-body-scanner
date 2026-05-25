@@ -1,68 +1,13 @@
-
 # AI Body Scanner 💪🤖
+
+AI Body Scanner is an AI-powered mobile health and body analysis application developed with Flutter, FastAPI, Firebase, and MediaPipe technologies. The project aims to create an accessible and intelligent digital health assistant capable of analyzing full-body images through computer vision and machine learning techniques. By using only a single 2D full-body photograph and basic biometric information, the system can estimate body composition metrics such as body fat percentage, lean body mass, posture balance, anthropometric ratios, and daily calorie requirements.
+
+The application combines image processing, pose detection, anthropometric analysis, and AI-supported estimation models to generate personalized health insights, workout suggestions, and nutrition recommendations. Unlike traditional body analysis systems that rely on expensive hardware or specialized scanning equipment, AI Body Scanner focuses on delivering a low-cost, scalable, and user-friendly mobile solution that can be accessed directly through smartphones.
+
+The system architecture consists of a Flutter-based cross-platform mobile application, a FastAPI backend infrastructure, Firebase cloud services, and an AI analysis engine powered by MediaPipe and custom body analysis algorithms. The project also includes user authentication, historical analysis tracking, dynamic recommendation systems, and cloud-based data management features to improve long-term user experience and personalization.
+
+Developed within the scope of the TÜBİTAK 2209-A University Students Research Projects Support Program, AI Body Scanner aims to contribute to the intersection of artificial intelligence, mobile health technologies, and digital wellness systems by providing a modern, intelligent, and research-oriented body analysis platform.
+
 ## 👨‍💻 Developers
-- Sultan Uyar
+- Nazmi Uyar
 - Sıla Şirin
-
-A full-stack AI-powered mobile application that analyzes full-body photos to estimate body fat percentage, lean mass, and calculate health risk levels. It dynamically generates personalized diet and workout plans based on the user's bodily geometry.
-
-## 🌟 Key Features
-* **Advanced Pose Detection**: Uses Google's modern **MediaPipe Tasks API** to identify 33 precise 3D body landmarks.
-* **Proportional Analysis**: Extracts true-pixel distances and calculates advanced proxies like:
-  * WHtR (Waist-to-Height Ratio)
-  * SHR (Shoulder-to-Hip Ratio)
-  * LTR (Limb-to-Torso Ratio)
-* **Robust Body Fat Estimator**: Combines baseline Deurenberg calculations with visual aspect-ratio-corrected image features for highly accurate, shape-sensitive outputs.
-* **Smart Quality Gates**: Automatically rejects non-human photos, incomplete body frames, and poor lighting/poses to prevent hallucinated results.
-* **Cross-Platform Mobile App**: Crafted natively with Flutter for seamless iOS & Android performance.
-
----
-
-## 🏗️ Architecture
-
-The project consists of two highly decoupled engines:
-
-1. **`flutter_app/` (Frontend)**
-   * Built with Flutter / Dart.
-   * Handles camera operations, UI state management (Bloc), and dynamic rendering of the workout/diet recommendations.
-2. **`backend/` (AI Engine)**
-   * Built with Python 3 & FastAPI.
-   * Processes the multipart-form image streams using OpenCV and MediaPipe.
-   * Executes the complex mathematical ratios and health classification logic remotely.
-
----
-
-## 🚀 Getting Started
-
-### 1. Starting the Python Backend
-Ensure you have Python 3.10+ installed.
-
-```bash
-cd backend
-# Install required ML libraries (OpenCV, MediaPipe, FastAPI)
-pip install -r requirements.txt
-
-# Start the local AI server
-uvicorn main:app --host 0.0.0.0 --port 3000
-```
-
-### 2. Running the Flutter App
-Ensure you have the Flutter SDK installed.
-
-```bash
-cd flutter_app
-# Install dependencies
-flutter pub get
-
-# Run on a connected physical device or iOS/Android simulator
-flutter run
-```
-
-*(Note: To test on a physical iPhone, ensure your Mac and iPhone are on the same Wi-Fi network. Update `api_service.dart` with your Mac's true Local IP address instead of localhost.)*
-
----
-
-## 🛠️ Tech Stack
-* **Frontend**: Flutter, Dart, flutter_bloc, animate_do
-* **Backend**: Python, FastAPI, Uvicorn
-* **AI & Computer Vision**: OpenCV, MediaPipe (Tasks Vision API), NumPy
